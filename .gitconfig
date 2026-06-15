@@ -1,3 +1,5 @@
 [user]
 	name = Enders
 	email = dima.enders@icloud.com
+[pull]
+	rebase = true

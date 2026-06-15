@@ -299,3 +299,21 @@ git checkout --ours Jenkinsfile   # взять локальный вариант
 git add Jenkinsfile               # пометить конфликт решённым
 git rebase --continue
 git push origin main
+clear
+ls
+vim Jenkinsfile 
+ls
+vim Jenkinsfile 
+git add . && git commit -m "feat: implement pre-build unit tests and post-
+build smoke tests" && git push origin main
+clear
+ls
+docker ps
+jenkins
+ls
+id
+cat /home/team02/.jenkins/secrets/initialAdminPassword
+initialAdminPassword
+cd /home/team02/.jenkins/secrets
+systemctl stop jenkins
+systemctl start jenkins

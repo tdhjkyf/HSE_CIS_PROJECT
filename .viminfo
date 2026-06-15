@@ -21,7 +21,7 @@ $02
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1781548270,,"wq"
+|2,0,1781548445,,"wq"
 :w
 |2,0,1781548251,,"w"
 :%s/GG/02
@@ -301,40 +301,52 @@ $02
 |3,0,8,1,24,0,1781541228,"pipeline {","    agent any","","    triggers {","        pollSCM('* * * * *')","    }","","    stages {","        stage('Checkout Code') {","            steps {","                cleanWs()","                checkout scm","            }","        }","","        stage('Docker Deploy') {","            steps {","                echo 'Перезапускаем контейнеры команды project_02...'",>56
 |<"                sh 'docker compose -p project_02 down'","                sh 'docker compose -p project_02 up -d --build'","            }","        }","    }","}"
 ""-	CHAR	0
-	broken-status
-|3,1,36,0,1,0,1781548184,"broken-status"
+	-error
+|3,1,36,0,1,0,1781548443,"-error"
 
 # File marks:
-'0  12  49  ~/nginx/nginx.conf
-|4,48,12,49,1781548270,"~/nginx/nginx.conf"
-'1  52  37  ~/backend/app.py
-|4,49,52,37,1781548193,"~/backend/app.py"
-'2  52  43  ~/backend/app.py
-|4,50,52,43,1781547821,"~/backend/app.py"
-'3  56  36  ~/backend/app.py
-|4,51,56,36,1781547401,"~/backend/app.py"
+'0  12  44  ~/nginx/nginx.conf
+|4,48,12,44,1781548445,"~/nginx/nginx.conf"
+'1  12  49  ~/nginx/nginx.conf
+|4,49,12,49,1781548270,"~/nginx/nginx.conf"
+'2  52  37  ~/backend/app.py
+|4,50,52,37,1781548193,"~/backend/app.py"
+'3  52  43  ~/backend/app.py
+|4,51,52,43,1781547821,"~/backend/app.py"
 '4  56  36  ~/backend/app.py
 |4,52,56,36,1781547401,"~/backend/app.py"
 '5  56  36  ~/backend/app.py
 |4,53,56,36,1781547401,"~/backend/app.py"
 '6  56  36  ~/backend/app.py
 |4,54,56,36,1781547401,"~/backend/app.py"
-'7  64  0  ~/Jenkinsfile
-|4,55,64,0,1781546647,"~/Jenkinsfile"
-'8  1  0  ~/Jenkinsfile
-|4,56,1,0,1781546444,"~/Jenkinsfile"
-'9  18  0  ~/Jenkinsfile
-|4,57,18,0,1781546444,"~/Jenkinsfile"
+'7  56  36  ~/backend/app.py
+|4,55,56,36,1781547401,"~/backend/app.py"
+'8  64  0  ~/Jenkinsfile
+|4,56,64,0,1781546647,"~/Jenkinsfile"
+'9  1  0  ~/Jenkinsfile
+|4,57,1,0,1781546444,"~/Jenkinsfile"
 
 # Jumplist (newest first):
+-'  12  44  ~/nginx/nginx.conf
+|4,39,12,44,1781548445,"~/nginx/nginx.conf"
 -'  12  49  ~/nginx/nginx.conf
 |4,39,12,49,1781548270,"~/nginx/nginx.conf"
+-'  1  0  ~/nginx/nginx.conf
+|4,39,1,0,1781548208,"~/nginx/nginx.conf"
 -'  1  0  ~/nginx/nginx.conf
 |4,39,1,0,1781548208,"~/nginx/nginx.conf"
 -'  52  37  ~/backend/app.py
 |4,39,52,37,1781548193,"~/backend/app.py"
 -'  52  37  ~/backend/app.py
 |4,39,52,37,1781548193,"~/backend/app.py"
+-'  52  37  ~/backend/app.py
+|4,39,52,37,1781548193,"~/backend/app.py"
+-'  52  37  ~/backend/app.py
+|4,39,52,37,1781548193,"~/backend/app.py"
+-'  52  43  ~/backend/app.py
+|4,39,52,43,1781547821,"~/backend/app.py"
+-'  52  43  ~/backend/app.py
+|4,39,52,43,1781547821,"~/backend/app.py"
 -'  52  43  ~/backend/app.py
 |4,39,52,43,1781547821,"~/backend/app.py"
 -'  52  43  ~/backend/app.py
@@ -347,6 +359,18 @@ $02
 |4,39,56,36,1781547784,"~/backend/app.py"
 -'  56  36  ~/backend/app.py
 |4,39,56,36,1781547784,"~/backend/app.py"
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547784,"~/backend/app.py"
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547784,"~/backend/app.py"
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547784,"~/backend/app.py"
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547784,"~/backend/app.py"
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547401,"~/backend/app.py"
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547401,"~/backend/app.py"
 -'  56  36  ~/backend/app.py
 |4,39,56,36,1781547401,"~/backend/app.py"
 -'  56  36  ~/backend/app.py
@@ -383,6 +407,70 @@ $02
 |4,39,64,0,1781546647,"~/Jenkinsfile"
 -'  64  0  ~/Jenkinsfile
 |4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781546638,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
@@ -439,103 +527,15 @@ $02
 |4,39,18,0,1781546444,"~/Jenkinsfile"
 -'  18  0  ~/Jenkinsfile
 |4,39,18,0,1781546444,"~/Jenkinsfile"
--'  18  0  ~/Jenkinsfile
-|4,39,18,0,1781546444,"~/Jenkinsfile"
--'  18  0  ~/Jenkinsfile
-|4,39,18,0,1781546444,"~/Jenkinsfile"
--'  18  0  ~/Jenkinsfile
-|4,39,18,0,1781546444,"~/Jenkinsfile"
--'  18  0  ~/Jenkinsfile
-|4,39,18,0,1781546444,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1781546431,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
--'  40  0  ~/Jenkinsfile
-|4,39,40,0,1781544820,"~/Jenkinsfile"
--'  67  0  ~/Jenkinsfile
-|4,39,67,0,1781544820,"~/Jenkinsfile"
 
 # History of marks within files (newest to oldest):
 
 > ~/nginx/nginx.conf
-	*	1781548251	0
-	"	12	49
+	*	1781548443	0
+	"	12	44
 	^	12	50
-	.	12	49
-	+	12	49
+	.	12	44
+	+	12	44
 
 > ~/backend/app.py
 	*	1781548192	0

@@ -21,7 +21,7 @@ $02
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1781546647,,"wq"
+|2,0,1781547401,,"wq"
 :%s/GG/02
 |2,0,1781544790,,"%s/GG/02"
 :w
@@ -42,7 +42,7 @@ $02
 # Debug Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
+"1	LINE	0
 	stage('Post-Build: Smoke Tests') {
 	    steps {
 	        echo 'Контейнеры развернуты. Ожидание инициализации веб-серверов...'
@@ -70,7 +70,7 @@ $02
 	        echo 'Все автоматические проверки качества успешно завершены! Сборка валидна.'
 	    }
 	}
-|3,1,1,1,27,0,1781546639,"stage('Post-Build: Smoke Tests') {","    steps {","        echo 'Контейнеры развернуты. Ожидание инициализации веб-серверов...'","        sleep 5","","        echo 'Тестирование доступности статического фронтенда Nginx на внешнем порту...'","        sh '''",>92
+|3,0,1,1,27,0,1781546639,"stage('Post-Build: Smoke Tests') {","    steps {","        echo 'Контейнеры развернуты. Ожидание инициализации веб-серверов...'","        sleep 5","","        echo 'Тестирование доступности статического фронтенда Nginx на внешнем порту...'","        sh '''",>92
 |<"            STATUS_CODE=$(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8002/)","            echo \"Frontend HTTP Status Code: $STATUS_CODE\"","            if [ \"$STATUS_CODE\" -ne 200 ]; then","                echo \"АВАРИЯ: Фронтенд вернул код $STATUS_CODE вместо ожидаемого 200!\"","                exit 1","            fi","        '''","",>111
 |<"        echo 'Тестирование сквозного проксирования Nginx -> Backend API...'","        sh '''","            API_CODE=$(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8002/api/health)","            echo \"Backend API HTTP Status Code: $API_CODE\"","            if [ \"$API_CODE\" -ne 200 ]; then","                echo \"АВАРИЯ: Эндпоинт здоровья недоступен через Nginx (Код: $API_CODE)!\"",>24
 |<"                exit 1","            fi","        '''","        echo 'Все автоматические проверки качества успешно завершены! Сборка валидна.'","    }","}"
@@ -300,41 +300,55 @@ $02
 	}
 |3,0,8,1,24,0,1781541228,"pipeline {","    agent any","","    triggers {","        pollSCM('* * * * *')","    }","","    stages {","        stage('Checkout Code') {","            steps {","                cleanWs()","                checkout scm","            }","        }","","        stage('Docker Deploy') {","            steps {","                echo 'Перезапускаем контейнеры команды project_02...'",>56
 |<"                sh 'docker compose -p project_02 down'","                sh 'docker compose -p project_02 up -d --build'","            }","        }","    }","}"
-"-	CHAR	0
-	0
-|3,0,36,0,1,0,1781540784,"0"
+""-	CHAR	0
+	2
+|3,1,36,0,1,0,1781547398,"2"
 
 # File marks:
-'0  64  0  ~/Jenkinsfile
-|4,48,64,0,1781546647,"~/Jenkinsfile"
-'1  1  0  ~/Jenkinsfile
-|4,49,1,0,1781546444,"~/Jenkinsfile"
-'2  18  0  ~/Jenkinsfile
-|4,50,18,0,1781546444,"~/Jenkinsfile"
-'3  1  0  ~/Jenkinsfile
-|4,51,1,0,1781544820,"~/Jenkinsfile"
-'4  40  0  ~/Jenkinsfile
-|4,52,40,0,1781544820,"~/Jenkinsfile"
-'5  1  0  ~/Jenkinsfile
-|4,53,1,0,1781544820,"~/Jenkinsfile"
-'6  67  0  ~/Jenkinsfile
-|4,54,67,0,1781544820,"~/Jenkinsfile"
-'7  1  0  ~/Jenkinsfile
-|4,55,1,0,1781544797,"~/Jenkinsfile"
+'0  56  36  ~/backend/app.py
+|4,48,56,36,1781547401,"~/backend/app.py"
+'1  64  0  ~/Jenkinsfile
+|4,49,64,0,1781546647,"~/Jenkinsfile"
+'2  1  0  ~/Jenkinsfile
+|4,50,1,0,1781546444,"~/Jenkinsfile"
+'3  18  0  ~/Jenkinsfile
+|4,51,18,0,1781546444,"~/Jenkinsfile"
+'4  1  0  ~/Jenkinsfile
+|4,52,1,0,1781544820,"~/Jenkinsfile"
+'5  40  0  ~/Jenkinsfile
+|4,53,40,0,1781544820,"~/Jenkinsfile"
+'6  1  0  ~/Jenkinsfile
+|4,54,1,0,1781544820,"~/Jenkinsfile"
+'7  67  0  ~/Jenkinsfile
+|4,55,67,0,1781544820,"~/Jenkinsfile"
 '8  1  0  ~/Jenkinsfile
 |4,56,1,0,1781544797,"~/Jenkinsfile"
 '9  1  0  ~/Jenkinsfile
 |4,57,1,0,1781544797,"~/Jenkinsfile"
 
 # Jumplist (newest first):
+-'  56  36  ~/backend/app.py
+|4,39,56,36,1781547401,"~/backend/app.py"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781546647,"~/Jenkinsfile"
 -'  64  0  ~/Jenkinsfile
 |4,39,64,0,1781546647,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546638,"~/Jenkinsfile"
+-'  18  0  ~/Jenkinsfile
+|4,39,18,0,1781546444,"~/Jenkinsfile"
 -'  18  0  ~/Jenkinsfile
 |4,39,18,0,1781546444,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781546431,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781546431,"~/Jenkinsfile"
+-'  40  0  ~/Jenkinsfile
+|4,39,40,0,1781544820,"~/Jenkinsfile"
+-'  67  0  ~/Jenkinsfile
+|4,39,67,0,1781544820,"~/Jenkinsfile"
 -'  40  0  ~/Jenkinsfile
 |4,39,40,0,1781544820,"~/Jenkinsfile"
 -'  67  0  ~/Jenkinsfile
@@ -342,9 +356,17 @@ $02
 -'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781544801,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781544801,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781544797,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781544797,"~/Jenkinsfile"
 -'  67  0  ~/Jenkinsfile
 |4,39,67,0,1781544790,"~/Jenkinsfile"
+-'  67  0  ~/Jenkinsfile
+|4,39,67,0,1781544790,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781544704,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781544704,"~/Jenkinsfile"
 -'  6  0  ~/Jenkinsfile
@@ -361,6 +383,22 @@ $02
 |4,39,64,0,1781541285,"~/Jenkinsfile"
 -'  64  0  ~/Jenkinsfile
 |4,39,64,0,1781541285,"~/Jenkinsfile"
+-'  6  0  ~/Jenkinsfile
+|4,39,6,0,1781541285,"~/Jenkinsfile"
+-'  37  0  ~/Jenkinsfile
+|4,39,37,0,1781541285,"~/Jenkinsfile"
+-'  33  0  ~/Jenkinsfile
+|4,39,33,0,1781541285,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781541285,"~/Jenkinsfile"
+-'  33  0  ~/Jenkinsfile
+|4,39,33,0,1781541285,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781541285,"~/Jenkinsfile"
+-'  64  0  ~/Jenkinsfile
+|4,39,64,0,1781541285,"~/Jenkinsfile"
+-'  1  0  ~/Jenkinsfile
+|4,39,1,0,1781541240,"~/Jenkinsfile"
 -'  1  0  ~/Jenkinsfile
 |4,39,1,0,1781541240,"~/Jenkinsfile"
 -'  1  4  ~/backend/test_app.py
@@ -489,46 +527,27 @@ $02
 |4,39,1,4,1781541110,"~/backend/test_app.py"
 -'  1  4  ~/backend/test_app.py
 |4,39,1,4,1781541110,"~/backend/test_app.py"
--'  1  4  ~/backend/test_app.py
-|4,39,1,4,1781541110,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
--'  18  12  ~/backend/test_app.py
-|4,39,18,12,1781541082,"~/backend/test_app.py"
 
 # History of marks within files (newest to oldest):
+
+> ~/backend/app.py
+	*	1781547400	0
+	"	56	36
+	^	56	37
+	.	56	36
+	+	56	46
+	+	56	3
+	+	56	7
+	+	56	0
+	+	57	0
+	+	56	46
+	+	56	41
+	+	56	3
+	+	56	0
+	+	49	42
+	+	52	3
+	+	53	0
+	+	56	36
 
 > ~/Jenkinsfile
 	*	1781546644	0
@@ -561,22 +580,3 @@ $02
 	+	20	0
 	+	27	0
 	+	43	0
-
-> ~/backend/app.py
-	*	1781540787	0
-	"	56	36
-	^	56	37
-	.	56	36
-	+	56	46
-	+	56	3
-	+	56	7
-	+	56	0
-	+	57	0
-	+	56	46
-	+	56	41
-	+	56	3
-	+	56	0
-	+	49	42
-	+	52	3
-	+	53	0
-	+	56	36

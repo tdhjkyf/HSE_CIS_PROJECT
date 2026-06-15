@@ -273,3 +273,29 @@ git add nginx/nginx.conf
 git commit -m "fix: use container name in nginx upstream"
 git push origin main
 exit
+clear
+ls
+cd backend
+ls
+git
+clear
+git status
+vim app.py
+vim test_app.py
+cd
+ls
+vim Jenkinsfile 
+git add . && git commit -m "feat: implement pre-build unit tests and post-build smoke tests" && git push origin main
+git push origin main
+git pull
+git pull main
+git pull origin main
+git config --global pull.rebase true
+git pull origin main
+git add .
+git commit -m "pul policy update" 
+git pull origin main
+git checkout --ours Jenkinsfile   # взять локальный вариант
+git add Jenkinsfile               # пометить конфликт решённым
+git rebase --continue
+git push origin main
